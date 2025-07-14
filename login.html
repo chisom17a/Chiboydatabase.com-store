@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f4f7fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .card { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+    input { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 1rem; }
+    button { width: 100%; padding: 0.8rem; background-color: #1e90ff; color: white; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; }
+    #bird { display: none; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <div id="captchaContainer"></div>
+    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="bird">
+    <img src="https://media.giphy.com/media/fdLRAPFtjZyRq/giphy.gif" alt="Bird Flying" style="max-width:100%;">
+    <p>Redirecting...</p>
+  </div>
+
+  <script>
+    const captchaValue = Math.floor(1000 + Math.random() * 9000).toString();
+    document.getElementById('captchaContainer').innerHTML = '<p style="text-align:center;font-weight:bold;">CAPTCHA: ' + captchaValue + '</p>';
+
+    function login() {
+      const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const captchaInput = document.getElementById('captchaInput').value;
+
+      if (captchaInput !== captchaValue) {
+        alert('Incorrect CAPTCHA');
+        return;
+      }
+
+      document.querySelector('.card').style.display = 'none';
+      document.getElementById('bird').style.display = 'block';
+
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
