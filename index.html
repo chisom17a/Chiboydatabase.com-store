@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Register</title>
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f4f7fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-    .card { background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-    input { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 1rem; }
-    button { width: 100%; padding: 0.8rem; background-color: #1e90ff; color: white; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <h2>Register</h2>
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="tel" id="phone" placeholder="Phone" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <input type="password" id="repeatPassword" placeholder="Repeat Password" required />
-    <button onclick="register()">Register</button>
-  </div>
+    <div class="dashboard">
+        <div class="balance">
+            Balance: ₦0
+        </div>
+        <button class="top-up-button" onclick="window.location.href='topup.html'">Top Up</button>
+        <button class="check-in-button">Check In</button>
 
-  <script>
-    function register() {
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const password = document.getElementById('password').value;
-      const repeatPassword = document.getElementById('repeatPassword').value;
+        <h3>Products</h3>
+        <div class="product">
+            <p>Product 1</p>
+            <p>Product A - ₦50</p>
+            <button class="buy-button">Buy</button>
+        </div>
+        <div class="product">
+            <p>Product 2</p>
+            <p>Product B - ₦70</p>
+            <button class="buy-button">Buy</button>
+        </div>
+        <div class="product">
+            <p>Product 3</p>
+            <p>Product C - ₦90</p>
+            <button class="buy-button">Buy</button>
+        </div>
 
-      if (password !== repeatPassword) {
-        alert('Passwords do not match');
-        return;
-      }
-
-      localStorage.setItem('user', JSON.stringify({ email, phone, password }));
-      document.body.innerHTML = '<p style="font-size:1.5rem;text-align:center;">Hello, you will be redirected in 3 seconds...</p>';
-      setTimeout(() => {
-        window.location.href = 'login.html';
-      }, 3000);
-    }
-  </script>
+        <div class="footer">
+            <button>🏘️ Home</button>
+            <button>🚑 Emergency</button>
+            <button>🛒 Products</button>
+        </div>
+    </div>
 </body>
 </html>

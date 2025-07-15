@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.top-up-button, .check-in-button, .buy-button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product {
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.topup-body {
+    background-color: black;
+    color: yellow;
+    text-align: center;
+    padding: 30px;
+}
+
+.topup-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.deposit-button {
+    margin: 10px;
+    padding: 10px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.chosen-amount {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.image-upload {
+    margin-top: 20px;
+}
+
+.submit-container {
+    margin-top: 20px;
+}
+
+.submit-button, .cancel-button {
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+}
